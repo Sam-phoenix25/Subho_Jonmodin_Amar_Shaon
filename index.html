@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Algae</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Noto+Serif+Bengali&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'Playfair Display',serif;
+  background:
+    linear-gradient(rgba(20,15,10,.65),rgba(20,15,10,.75)),
+    url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80');
+  background-size:cover;
+  background-attachment:fixed;
+  color:#fff;
+  scroll-behavior:smooth;
+}
+
+/* Landing */
+#landing{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#startBtn{
+  padding:18px 42px;
+  font-size:20px;
+  border-radius:40px;
+  border:none;
+  background:#cfa670;
+  color:#3b2f2f;
+  cursor:pointer;
+  animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Main content */
+#content{display:none}
+
+/* Kolkata vibe */
+#kolkata-vibe{
+  padding:70px 20px 40px;
+  text-align:center;
+  font-size:18px;
+  line-height:1.8;
+  color:#f3e6d2;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(3px);
+}
+
+#kolkata-vibe span{
+  display:block;
+  font-size:28px;
+  margin-bottom:14px;
+}
+
+/* Title */
+#title{
+  text-align:center;
+  padding:50px 20px 30px;
+  font-size:34px;
+}
+
+/* Balloons */
+.balloon{
+  position:fixed;
+  bottom:-120px;
+  width:40px;
+  height:55px;
+  background:rgba(255,180,180,.8);
+  border-radius:50%;
+  animation:floatUp 10s linear infinite;
+  z-index:0;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(0)}
+  to{transform:translateY(-120vh)}
+}
+
+/* Gallery */
+.gallery{
+  padding:40px 16px;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+
+.gallery img{
+  width:100%;
+  max-width:340px;
+  margin:auto;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  opacity:0;
+  transform:rotate(-2deg) scale(.96);
+  transition:all 1.2s ease;
+}
+
+.gallery img.show{
+  opacity:1;
+  transform:rotate(2deg) scale(1);
+  animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0) rotate(1deg)}
+  50%{transform:translateY(-6px) rotate(-1deg)}
+  100%{transform:translateY(0) rotate(1deg)}
+}
+
+/* Message */
+#message-section{
+  padding:60px 16px 90px;
+  display:flex;
+  justify-content:center;
+}
+
+.message-card{
+  max-width:420px;
+  background:rgba(255,245,230,.92);
+  padding:28px 22px;
+  border-radius:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+  font-family:'Noto Serif Bengali',serif;
+  color:#3b2f2f;
+  line-height:1.9;
+  font-size:15px;
+}
+
+.signature{
+  margin-top:28px;
+  text-align:right;
+  font-style:italic;
+  font-size:14px;
+}
+
+/* Music toggle */
+#musicToggle{
+  position:fixed;
+  bottom:20px;
+  right:16px;
+  background:#cfa670;
+  color:#3b2f2f;
+  border-radius:50%;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  cursor:pointer;
+  z-index:999;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Landing -->
+<div id="landing">
+  <button id="startBtn" onclick="startExperience()">My Day</button>
+</div>
+
+<!-- Main Content -->
+<div id="content">
+
+  <div id="kolkata-vibe">
+    <span>ডিসেম্বরের কলকাতা</span>
+    হালকা কুয়াশা, রাস্তার আলো, চায়ের কাপ<br>
+    আর তোমার সাথে কাটানো কিছু নিঃশব্দ মুহূর্ত
+  </div>
+
+  <div id="title">Happy Birthday My Algae</div>
+
+  <!-- Balloons -->
+  <div class="balloon" style="left:10%;animation-delay:0s"></div>
+  <div class="balloon" style="left:40%;animation-delay:3s"></div>
+  <div class="balloon" style="left:70%;animation-delay:6s"></div>
+
+  <!-- Gallery -->
+  <div id="image-section" class="gallery">
+    <img src="https://i.ibb.co/DDfvfw7D/image2-bb.jpg">
+    <img src="https://i.ibb.co/kZF7gqn/img1-bb.jpg">
+    <img src="https://i.ibb.co/Lz9HHP31/image3-bb.jpg">
+    <img src="https://i.ibb.co/ccDbR903/image4-bb.jpg">
+    <img src="https://i.ibb.co/FkZynmf0/image5-bb.jpg">
+    <img src="https://i.ibb.co/GQk6gxn9/image6-bb.jpg">
+    <img src="https://i.ibb.co/4RDh9QHT/image7-bb.jpg">
+  </div>
+
+  <!-- Message -->
+  <section id="message-section">
+    <div class="message-card">
+      প্রিয়তমা অ্যালগি,<br><br>
+      শুভ জন্মদিন সোনা। তোর জন্য রইলো আমার শুভেচ্ছা আর অফুরান ভালোবাসা।
+      আগেও বলেছি আর আবার আজও বলছি আমি তোমাকে আমার "ডাক্তার" রুপেই দেখতে চাই।
+      ওই ওপরে যিনি সর্বদা তোমাকে দেখছেন সে তোমাকে সবসময় আগলে রাখুন,
+      সুস্থ রাখুন, ভালো রাখুন।<br><br>
+      তোমার জন্য যা যা ধার্য সেইসব তোমাকে দিক।
+      তোমার ইচ্ছা গুলো পূরণ করুক।
+      আর যেনো সবসময় তোমাকে কঠিন থেকে কঠিনোতর পরিস্থিতি থেকে
+      নিজেকে ঠিক রাখার, সামলে রাখার অসীম ক্ষমতা এবং ধৈর্য দিক।<br><br>
+      আর সর্বোপরি আরেকটা প্রার্থনা করবো যে
+      বাকি জীবনে যতোগুলো ডিসেম্বর আসবে
+      সবগুলোই তোমাকে নিয়ে তোমার সাথে এভাবেই কাটিয়ে দেবো।
+      <div class="signature">
+        ইতি,<br>একান্তই তোমার নিজের বিরিয়ানি
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 🎵 AUDIO (LOCAL MP3, NO ADS) -->
+<audio id="bgMusic" preload="auto">
+  <source src="bhalobashi-tomake.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicToggle" onclick="toggleMusic()">🔊</div>
+
+<script>
+const music = document.getElementById('bgMusic');
+let playing = false;
+
+function startExperience(){
+  document.getElementById('landing').style.display='none';
+  document.getElementById('content').style.display='block';
+
+  music.volume = 0;
+  music.play();
+  playing = true;
+
+  // Smooth fade-in
+  let v = 0;
+  const fade = setInterval(()=>{
+    if(v < 0.6){
+      v += 0.05;
+      music.volume = v;
+    } else {
+      clearInterval(fade);
+    }
+  }, 200);
+}
+
+function toggleMusic(){
+  if(playing){
+    music.pause();
+    document.getElementById('musicToggle').textContent = "🔇";
+  } else {
+    music.play();
+    document.getElementById('musicToggle').textContent = "🔊";
+  }
+  playing = !playing;
+}
+
+/* Image reveal */
+const images = document.querySelectorAll('.gallery img');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:.3});
+
+images.forEach(img=>observer.observe(img));
+</script>
+
+</body>
+</html>
